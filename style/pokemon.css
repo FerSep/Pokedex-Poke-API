@@ -1,0 +1,38 @@
+
+.pokeCard{
+    position: relative;
+    flex: 1;
+    height: 500px;
+    background-color: #f0f0f0;
+    border: 1px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    margin: 10px;
+}
+
+.pokeHeader{
+    border:1px solid black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 120px;
+    padding: 12px;
+    margin: 8px;
+}
+
+    .pokeHeader img{
+        width: 180px;
+        height: 180px;
+        image-rendering: pixelated;
+        overflow: hidden;
+    }
+
+.pokeNav{
+    position: absolute;
+    top: 0;
+    left: 50%; 
+    transform: translateX(-50%)
+}
