@@ -1,12 +1,4 @@
 
-/*
-<nav class="pokeNav"> 
-
-                    <input type="radio" class="navElement" checked = true id="profile">Profile</input>
-                    <input type="radio" class="navElement" id="stats">Stats</input>
-                    <input type="radio" class="navElement" id="moves">Moves</input>
-                </nav>*/
-
 export function pokeNav(){
     const nav = document.createElement('nav')
     nav.classList.add('pokeNav')

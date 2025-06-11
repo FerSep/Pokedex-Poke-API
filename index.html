@@ -7,80 +7,126 @@
     <link rel="stylesheet" href="./style/pokemon.css">
     <link rel="stylesheet" href="./style/style.css">
     <script src="./js/controller/main.js" type="module" defer></script>
-    <script type="module" src="./js/index.js" defer></script>
+    <script type="module" src="./js/controller/index.js" defer></script>
 </head>
 <body>
-    <section class="header">
-        <h1>Pokedex</h1>
-        <label for="selectGen">Generación</label>
-        <select name="generation" id="selectGen">
-            <-- agregar el all --/>
-            <option value=1> generation 1 </option>
-            <option value=2> generation 2 </option>
-            <option value=3> generation 3 </option>
-            <option value=4> generation 4 </option>
-        </select>
-        <label for="selectType">Tipo</label>
-        <select name="type" id="selectType">
-            <option value="" disabled selected>Select Type</option>
-            <option value="normal">Normal</option>
-            <option value="fire">Fire</option>
-            <option value="water">Water</option>
-            <option value="grass">Grass</option>
-            <option value="electric">Electric</option>
-            <option value="ice">Ice</option>
-            <option value="fighting">Fighting</option>
-            <option value="poison">Poison</option>
-            <option value="ground">Ground</option>
-            <option value="flying">Flying</option>
-            <option value="psychic">Psychic</option>
-            <option value="bug">Bug</option>
-            <option value="rock">Rock</option>
-            <option value="ghost">Ghost</option>
-            <option value="dragon">Dragon</option>
-            <option value="dark">Dark</option>
-            <option value="steel">Steel</option>
-        </select>
-        <button id="btn">cargar</button>
-    </section>
+
     
+    <main>
 
-    <main id="pokemon">          
-        <section id="pokelist">
+        <header>
+            <h1>Pokedex</h1>
             
-        </section>
-
-        <div class="pokeCard" >
+            <select name="generation" id="selectGen">
+                <-- agregar el all --/>
+                <option value="" disabled selected>Generation ↓</option>
+                <option value=1> generation 1 </option>
+                <option value=2> generation 2 </option>
+                <option value=3> generation 3 </option>
+                <option value=4> generation 4 </option>
+                <option value=5> generation 5 </option>
+                <option value=6> generation 6 </option>
+                <option value=7> generation 7 </option>
+                <option value=8> generation 8 </option>
+                <option value=9> generation 9 </option>
+            </select>
 
             
-            
-            <article class="pokeMain">
+            <select name="type" id="selectType">
+                <option value="" disabled selected>Type ↓</option>
+                <option value="normal">Normal</option>
+                <option value="fire">Fire</option>
+                <option value="water">Water</option>
+                <option value="grass">Grass</option>
+                <option value="electric">Electric</option>
+                <option value="ice">Ice</option>
+                <option value="fighting">Fighting</option>
+                <option value="poison">Poison</option>
+                <option value="ground">Ground</option>
+                <option value="flying">Flying</option>
+                <option value="psychic">Psychic</option>
+                <option value="bug">Bug</option>
+                <option value="rock">Rock</option>
+                <option value="ghost">Ghost</option>
+                <option value="dragon">Dragon</option>
+                <option value="dark">Dark</option>
+                <option value="steel">Steel</option>
+            </select>
 
+            <select name="region" id="selectRegion">
+                <option value="" disabled selected>Region ↓</option>
+                <option value="2">Kanto</option>
+                <option value="3">Original-Johto</option>
+                <option value="4">Hoenn</option>
+                <option value="5">Original-Sinnoh</option>
+                <option value="8">Original-Unova</option>
+                <option value="11">Conquest-Gallery</option>
+                <option value="12">Kalos Central</option>
+                <option value="13">Kalos Coastal</option>
+                <option value="14">Kalos montain</option>
+                <option value="16">Original-Alola</option>
+            </select>
+
+            <article>
+                <input type="text" id="search" placeholder="Search (bulbasaur)">
+                <button id="btnSearch">Buscar</button>
+            </article>
+    </header> 
+
+        <section id="pokemon">
+            <section id="pokelist">
                 
+            </section>
 
-                <section class="pokeProfile">
-                    <div class="poketype">
-                        <h3>Type</h3>
-                        <span>Poison</span>
-                        <span>Grass</span>
-                    </div>
+            <section class="pokeCard" >
+                
+                    <article class="pokeHeader">
+                        <div>
+                            <span>001</span>
+                            <h2>bulbasaur</h2>
+                        </div>
+                        
+                        <img 
+                            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+                            alt="pokemon"
+                        >
+                    </article>
 
-                    <div class="pokeAbility">
-                        <h3>Abilities</h3>
-                        <span>Overgrow</span>
-                        <span>Chlorophyll</span>
-                    </div>
+                    <nav class="pokeNav">
+                        <label for="profile">p</label>
+                        <input type="radio" id="profile">
+                        <label for="stats">s</label>
+                        <input type="radio" id="stats">
+                        <label for="moves">m</label>
+                        <input type="radio" id="moves">
+                    </nav>
 
-                    <div class="pokeInfo">
-                        <h3>Info</h3>
-                        <span>Height: 0.7 m</span>
-                        <span>Weight: 6.9 kg</span>
-                        <span>Base experience: 64</span>
-                    </div>
-                </section>
-            </article>        
+                    <article class="pokeProfile">
+                        <div class="pokeType">
+                            <span>Grass</span>
+                            <span>Poison</span>
+                        </div>
+
+                        <div class="pokeAbility">
+                            <h3>Abilities: </h3>
+                            <p> Overgrow, Chlorophyll</p>
+                        </div>
+
+                        <div class="pokeInfo">
+                            <p><strong>Height:</strong> 0.7 m</p>
+                            <p><strong>Weight:</strong> 6.9 kg</p>
+                            <p>base experience: 64</p>
+                        </div>
+                    </article>
+               
+                    <section class="pokeMoves">
+                        
+                    </section>
+
+                     
+                
+            </section>
         </div>
-
     </main>
 
 </body>

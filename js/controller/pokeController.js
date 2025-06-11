@@ -1,5 +1,5 @@
-import { pokeGen, pokeDetails } from "../model/pokeGenModel.js";
-import {pokeType} from "../model/pokeTypeModel.js";
+import { pokeGen, pokeDetails, pokeRegion} from "../model/pokeModel.js";
+import { pokeType } from "../model/pokeTypeModel.js";
 
 export class getPoke{
 
@@ -40,4 +40,17 @@ export class getPoke{
 
         return datos
     }
+
+    static async getRegion(input){
+        const res = await pokeRegion(input)
+            if(!res) {
+                console.log('No hay datos')
+                return
+            }
+            const pokeList = document.getElementById('pokelist')
+            pokeList.innerHTML = ""
+            
+            return res
+    }
+
 }

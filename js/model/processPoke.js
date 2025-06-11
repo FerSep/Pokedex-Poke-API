@@ -27,4 +27,22 @@ export class ProcessPoke {
         }
         return info
     }
+
+    static async getstats(poke){
+        return poke.stats.map(stat => ({
+            name : stat.stat.name,
+            base_stat : stat.base_stat
+        }))
+    }
+
+    static async getmoves(poke){
+        if (!poke.moves) {
+            return [];
+        }
+        return poke.moves.map(move => ({
+            name : move.move.name,
+            url : move.move.url
+        }))
+    }
+
 }

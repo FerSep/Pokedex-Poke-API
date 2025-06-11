@@ -1,21 +1,39 @@
 
 body{
     background-color: #f0f0f0;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+
+main{
+    display: block;
+    width: 800px;
+    padding: 8px;
+    margin:auto ;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+header{
+
+    display: flex;
+    justify-content: space-around;
     align-items: center;
+    width: 100%;
+    height: 80px;
 }
 
 #pokemon{
-    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 980px;
+    width: 100%;
     height: 580px;
     background-color: #f0f0f0;
-    border: 1px solid black;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
 }
 
 #pokelist{
@@ -23,9 +41,8 @@ body{
     flex-direction: column;
     align-items: center;
     width: 200px;
-    height: 500px;
+    height: 520px;
     overflow-y: scroll;
-    
     border: 1px solid black;
     padding: 8px;
     margin: 8px;

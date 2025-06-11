@@ -1,7 +1,7 @@
-
+const url = "https://pokeapi.co/api/v2/";
 
 export async function pokeType(type){
-    const res = await fetch(`https://pokeapi.co/api/v2/type/${type}`);
+    const res = await fetch(`${url}type/${type}`);
     const data = await res.json()
     
     const pokemons = data.pokemon
