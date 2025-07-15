@@ -3,12 +3,19 @@ import {pokeHeader} from './components/pokeLayout/pokeHeader.js'
 import {pokeProfile} from './components/pokeLayout/pokeProfile.js'
 import {pokeStats} from './components/pokeLayout/pokeStats.js'
 import {pokeMoves} from './components/pokeLayout/pokeMoves.js'
-
+import { notFound } from './components/notFound.js'
 import {pokeNav} from './components/pokeNave.js'
 
+ const pokeList = document.getElementById("pokelist")
+ const pokeCard = document.querySelector('.pokeCard')
+
+ export function cleanPoke(){
+    pokeCard.innerHTML = ""
+ }
+
 export function renderList(pokemon){
-   
-    const pokeList = document.getElementById("pokelist")
+    pokeList.style.display = 'flex'
+    pokeList.innerHTML = ""
     pokemon.forEach(poke => {     
         pokeList.appendChild(card(poke.name, poke.id))
     })
@@ -16,23 +23,28 @@ export function renderList(pokemon){
 
 export function renderHeader(index, name, url){
    
-    const pokeCard = document.querySelector('.pokeCard')
-    console.log(url)
+    //const pokeCard = document.querySelector('.pokeCard')
     pokeCard.appendChild(pokeHeader(index, name, url))
     pokeCard.appendChild(pokeNav())
 }
 
 export function renderInfo(types, abilities, object){
-    const pokeCard = document.querySelector('.pokeCard')  
+    //const pokeCard = document.querySelector('.pokeCard')  
     pokeCard.appendChild(pokeProfile(types, abilities, object))
 }
 
 export function renderStats(array){
-    const pokeCard = document.querySelector('.pokeCard')
+    //const pokeCard = document.querySelector('.pokeCard')
     pokeCard.appendChild(pokeStats(array))
 }
 
 export function renderMoves(array){
-    const pokeCard = document.querySelector('.pokeCard')
     pokeCard.appendChild(pokeMoves(array))
+}
+
+export function renderNotFound(){
+    pokeList.style.display = 'none'
+    pokeCard.innerHTML = ""
+    pokeCard.appendChild(notFound())
+
 }

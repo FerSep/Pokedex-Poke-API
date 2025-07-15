@@ -22,7 +22,7 @@ export async function pokeRegion(input) {
     const res = await fetch(`${url}pokedex/${input}`);
     const data = await res.json();
     
-    console.log(data)
+    
     const pokemons = data.pokemon_entries
         .map(p => ({
         name: p.pokemon_species.name,
@@ -36,6 +36,11 @@ export async function pokeRegion(input) {
 
 export async function pokeDetails(input){
     const res = await fetch(`${url}pokemon/${input}`);
+
+    if(!res.ok){
+        console.log('No hay datos')
+        return 
+    }
     const data = await res.json();
     return data;
 }
@@ -46,3 +51,9 @@ export async function pokeMove(url) {
     return await res.json();
 
 }
+
+
+/*
+https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png
+url para obtener imagen y hacer icons de pokemon
+*/

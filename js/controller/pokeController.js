@@ -6,7 +6,6 @@ export class getPoke{
     static async getAll(gen){
         const datos = await pokeGen(gen);
         if(!datos) {
-            console.log('No hay datos');
             return;
         }
         console.log(datos);
@@ -19,8 +18,7 @@ export class getPoke{
     static async getDetails(input){
         const res = await pokeDetails(input)
             if(!res) {
-                console.log('No hay datos')
-                return
+                return 
             }
             const pokeCard = document.querySelector('.pokeCard')
             pokeCard.innerHTML = ""

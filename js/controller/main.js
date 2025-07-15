@@ -1,5 +1,5 @@
 
-import { renderList, renderHeader, renderInfo, renderStats, renderMoves} from "../view/renders.js";
+import { renderList, renderHeader, renderInfo, renderStats, renderMoves, renderNotFound, cleanPoke} from "../view/renders.js";
 import { ProcessPoke } from "../model/processPoke.js";
 import {getPoke} from "./pokeController.js";
 
@@ -25,14 +25,16 @@ export async function getRegion(input){
 export async function getDetails(input){
     const res = await getPoke.getDetails(input)
     if(!res) {
-        console.log('No hay datos')
+        console.log('404')
+        renderNotFound()
         return
     }
+
     const base = await getHeader(res)
     const info = await getInfo(res)
 
+    cleanPoke()
     renderHeader(base.id, base.name, base.img)
-
     renderInfo(info.types, info.abilities, info.object)
     renderStats(await ProcessPoke.getstats(res))
     renderMoves(await ProcessPoke.getmoves(res))
@@ -73,8 +75,6 @@ export async function searchMove(move) {
     
 
 }
-
-
 
 export async function getType(type){
     const datos = await getPoke.getType(type);

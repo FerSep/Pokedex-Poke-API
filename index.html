@@ -18,7 +18,6 @@
             <h1>Pokedex</h1>
             
             <select name="generation" id="selectGen">
-                <-- agregar el all --/>
                 <option value="" disabled selected>Generation ↓</option>
                 <option value=1> generation 1 </option>
                 <option value=2> generation 2 </option>
@@ -74,57 +73,13 @@
     </header> 
 
         <section id="pokemon">
-            <section id="pokelist">
+            <section id="pokelist" style="display: none;">
                 
             </section>
 
-            <section class="pokeCard" >
-                
-                    <article class="pokeHeader">
-                        <div>
-                            <span>001</span>
-                            <h2>bulbasaur</h2>
-                        </div>
-                        
-                        <img 
-                            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
-                            alt="pokemon"
-                        >
-                    </article>
-
-                    <nav class="pokeNav">
-                        <label for="profile">p</label>
-                        <input type="radio" id="profile">
-                        <label for="stats">s</label>
-                        <input type="radio" id="stats">
-                        <label for="moves">m</label>
-                        <input type="radio" id="moves">
-                    </nav>
-
-                    <article class="pokeProfile">
-                        <div class="pokeType">
-                            <span>Grass</span>
-                            <span>Poison</span>
-                        </div>
-
-                        <div class="pokeAbility">
-                            <h3>Abilities: </h3>
-                            <p> Overgrow, Chlorophyll</p>
-                        </div>
-
-                        <div class="pokeInfo">
-                            <p><strong>Height:</strong> 0.7 m</p>
-                            <p><strong>Weight:</strong> 6.9 kg</p>
-                            <p>base experience: 64</p>
-                        </div>
-                    </article>
-               
-                    <section class="pokeMoves">
-                        
-                    </section>
-
-                     
-                
+            <section class="pokeCard">                 
+                <h1>Bienvenidos a la pokedex, basada en la pokeAPI.</h1>
+                <p>Seleccione por generacion, tipos, region o busca por el nombre especifico de un pokemon.</p>
             </section>
         </div>
     </main>

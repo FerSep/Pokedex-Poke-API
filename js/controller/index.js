@@ -22,12 +22,9 @@ selectRegion.addEventListener("change", async (e) => {
 
 
 document.getElementById("pokelist").addEventListener("click", async (e)=>{
-   
     const card = e.target.closest('.card')
     if(!card) return
 
-    console.log(card.dataset.name)
-    
     await getDetails(card.dataset.name)
     
     changeDiv() 
@@ -46,8 +43,7 @@ if(moves){
 
 
 document.getElementById('btnSearch').addEventListener('click', async () => {
-    const searchInput = document.getElementById('search').value;
-    searchInput = searchInput.toLowerCase();
-    await getDetails(searchInput)
+    let searchInput = document.getElementById('search').value;
+    await getDetails(searchInput.toLowerCase())
     changeDiv()
 })
