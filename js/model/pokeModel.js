@@ -35,14 +35,14 @@ export async function pokeRegion(input) {
 
 
 export async function pokeDetails(input){
-    const res = await fetch(`${url}pokemon/${input}`);
-
-    if(!res.ok){
-        console.log('No hay datos')
-        return 
+    try{
+        const res = await fetch(`${url}pokemon/${input}`);
+        const data = await res.json();
+        return data;
+    }catch(error){
+        console.log(error)
+        return
     }
-    const data = await res.json();
-    return data;
 }
 
 
@@ -51,7 +51,6 @@ export async function pokeMove(url) {
     return await res.json();
 
 }
-
 
 /*
 https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png

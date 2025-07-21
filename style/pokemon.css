@@ -4,19 +4,21 @@
     flex: 1;
     height: 560px;
     background-color: #f0f0f0;
-    border: 1px solid black;
+    border-radius: 6px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     margin: 10px;
 }
 
+
+
 .pokeHeader{
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 240px;
+    min-height: 280px;
     width: 100%;
     margin-bottom: 6px;
 }
@@ -52,14 +54,47 @@
         text-align: center;
     }
 
-.pokeNav{
-    display: flex;
-    justify-content: center;
-    z-index: 2;
+.pokeNav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  border-bottom: 2px solid #ccc;
+  z-index: 2;
 }
 
+    .pokeNav input[type="radio"] {
+    display: none;
+    }
+
+    .pokeNav label {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+    background-color: #f3f3f3;
+    cursor: pointer;
+    font-weight: bold;
+    color: #444;
+    border: 1px solid transparent;
+    }
+
+
+    .pokeNav input[type="radio"]:checked + label {
+    background-color: rgb(234, 45, 45);
+    color: #ffffff;
+    border-color: #000000;
+    border-bottom: 2px solid white;
+    }
+
+
+    .pokeNav input[type="radio"]#profile:checked + label[for="profile"],
+    .pokeNav input[type="radio"]#stats:checked + label[for="stats"],
+    .pokeNav input[type="radio"]#moves:checked + label[for="moves"] {
+    background-color: rgb(234, 45, 45);
+    color: #ffffff;
+    border-color: #212121;
+    border-bottom: 2px solid rgb(199, 199, 199);
+    }
+
 .pokeProfile {
-    border: 1px solid #ccc; 
     padding: 20px;
     width: auto; 
     height: auto; 
@@ -67,7 +102,6 @@
     flex-direction: column; 
     justify-content: space-between; 
     align-items: center;  
-    border-radius: 8px; 
 }
 
     .pokeType {
@@ -89,8 +123,8 @@
 
     .pokeInfo {
         display: flex; 
-        
-        gap: 14px; 
+
+        gap: 10px;
     }
     .pokeInfo p {
         margin: 5px 0; 
@@ -103,24 +137,28 @@
 }
     .pokeStats h3{
         text-align: center;
+        
     }
     .pokeStats ul{
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        ;
-        gap: 16px 32px; /* espacio entre filas y columnas */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));;
+        gap: 16px 32px; 
         list-style: none;
         padding: 0;
-        margin: 0;
+        margin: 4px;
     }
     .pokeStats li{
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 6px;
-        font-size: 1rem;
+        font-size: 1em;
         color: #000000;
     }
+        .pokeStats li span {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
     
 
 .pokeMoves{

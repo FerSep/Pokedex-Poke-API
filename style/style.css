@@ -6,6 +6,12 @@ body{
     flex-direction: column;
     justify-content: center;
     height: 100%;
+    font-family: 
+    'Segoe UI', 
+    Roboto, 
+    Helvetica,
+    Arial,
+    sans-serif;
 }
 
 
@@ -13,8 +19,10 @@ main{
     display: block;
     width: 800px;
     padding: 8px;
-    margin:auto ;
+    margin: auto ;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: rgb(222, 222, 222);
 }
 
 header{
@@ -24,7 +32,16 @@ header{
     align-items: center;
     width: 100%;
     height: 80px;
+    border-radius: 6px 6px 0px 0px ;
+    background-color: rgb(234, 45, 45);
+    gap: 4px;
 }
+
+    header h1 {
+        font-weight: bold;
+        color: #fff;
+        margin: 2px;
+    }
 
 #pokemon{
     display: flex;
@@ -32,7 +49,7 @@ header{
     align-items: center;
     width: 100%;
     height: 580px;
-    background-color: #f0f0f0;
+    background-color: rgb(216, 216, 216);
     
 }
 
@@ -43,9 +60,14 @@ header{
     width: 200px;
     height: 520px;
     overflow-y: scroll;
-    border: 1px solid black;
     padding: 8px;
     margin: 8px;
+    mask-image: linear-gradient(to bottom,
+        transparent 0%,
+        white 6%,
+        white 92%,
+        transparent 100%
+    )
 }
 
 #pokelist div{
@@ -53,18 +75,55 @@ header{
     justify-content: center;
     align-items: center;
     width: 160px;
-    height: 50px;
+    height: 60px;
     background-color: #f0f0f0;
-    border: 1px solid black;
+    border-radius: 8px;
     margin-top: 8px;
-    padding: 8px;
+    padding: 6px;
     gap: 8px;
     cursor: pointer;
 }
-#pokelist ::-webkit-scrollbar {
-    width: 6px;
+
+#pokelist div h2 {
+    font-size: large;
+}
+/*
+scrollbar
+*/
+
+select {
+  padding: 8px 4px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  background-color: #efefef;
+  font-size: 1rem;
+  color: #3a3a3a;
+  cursor: pointer;
 }
 
+    select option {
+        color: rgb(0, 0, 0);
+        background-color: #e6e6e6;
+    }
+
+input {
+    padding: 8px 4px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    background-color: #efefef;
+    font-size: 1rem;
+    color: #3a3a3a;
+}
+    #btnSearch{
+        width: 60px;
+        height: 38px;
+        color: #3a3a3a;
+        background-color: #efefef;
+        border: 2px solid #a1a1a1;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-right: 2px;
+    }
 
 .notFound{
     display: flex;
@@ -73,4 +132,14 @@ header{
     width: 100%;
     height: 580px;
     
+}
+
+.welcome{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    background-color: #f0f0f0;
 }

@@ -18,7 +18,7 @@
             <h1>Pokedex</h1>
             
             <select name="generation" id="selectGen">
-                <option value="" disabled selected>Generation ↓</option>
+                <option value="" disabled selected>Generation</option>
                 <option value=1> generation 1 </option>
                 <option value=2> generation 2 </option>
                 <option value=3> generation 3 </option>
@@ -32,7 +32,7 @@
 
             
             <select name="type" id="selectType">
-                <option value="" disabled selected>Type ↓</option>
+                <option value="" disabled selected>Type</option>
                 <option value="normal">Normal</option>
                 <option value="fire">Fire</option>
                 <option value="water">Water</option>
@@ -53,7 +53,7 @@
             </select>
 
             <select name="region" id="selectRegion">
-                <option value="" disabled selected>Region ↓</option>
+                <option value="" disabled selected>Region</option>
                 <option value="2">Kanto</option>
                 <option value="3">Original-Johto</option>
                 <option value="4">Hoenn</option>
@@ -78,8 +78,20 @@
             </section>
 
             <section class="pokeCard">                 
-                <h1>Bienvenidos a la pokedex, basada en la pokeAPI.</h1>
-                <p>Seleccione por generacion, tipos, region o busca por el nombre especifico de un pokemon.</p>
+                <div class="welcome">
+                    <h1>Bienvenidos a la pokedex</h1>
+                    <p>
+                        Busca el pokemon por:
+                        <ul>
+                            <li>nombre</li>
+                            <li>tipo</li>
+                            <li>generacion</li>
+                            <li>region</li>
+                        </ul>
+                    </p>
+                    <span>Esta pokedex esta utilizando la <a href="https://pokeapi.co">pokeapi</a></span>
+
+                </div>
             </section>
         </div>
     </main>

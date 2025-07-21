@@ -35,12 +35,13 @@ export function pokeNav(){
     labelMoves.setAttribute('for', 'moves')
     labelMoves.textContent = 'Moves'
 
-    nav.appendChild(labelProfile) 
+    
     nav.appendChild(profile)
-    nav.appendChild(labelStats)
+    nav.appendChild(labelProfile) 
     nav.appendChild(stats)
-    nav.appendChild(labelMoves) 
+    nav.appendChild(labelStats)
     nav.appendChild(moves)
+    nav.appendChild(labelMoves) 
 
     return nav
 }

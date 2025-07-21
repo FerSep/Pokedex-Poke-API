@@ -7,11 +7,7 @@ export function pokeMoves(array){
     section.classList.add('pokeMoves')
     section.style.display = 'none'
   
-    const h3 = document.createElement('h3')
-    h3.textContent = 'Moves: '
-
     const container = document.createElement('ul')
-    section.appendChild(h3)
     array.forEach(element => {
         const moves = document.createElement('li')
         moves.textContent = element.name
@@ -24,7 +20,6 @@ export function pokeMoves(array){
     container.querySelectorAll('li').forEach(element => {
         element.addEventListener('click', async (e) => {
             const url = e.target.dataset.url
-            console.log(url)
         })
     })
  

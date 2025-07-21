@@ -22,19 +22,15 @@ export function renderList(pokemon){
 }
 
 export function renderHeader(index, name, url){
-   
-    //const pokeCard = document.querySelector('.pokeCard')
     pokeCard.appendChild(pokeHeader(index, name, url))
     pokeCard.appendChild(pokeNav())
 }
 
 export function renderInfo(types, abilities, object){
-    //const pokeCard = document.querySelector('.pokeCard')  
     pokeCard.appendChild(pokeProfile(types, abilities, object))
 }
 
 export function renderStats(array){
-    //const pokeCard = document.querySelector('.pokeCard')
     pokeCard.appendChild(pokeStats(array))
 }
 
@@ -43,7 +39,6 @@ export function renderMoves(array){
 }
 
 export function renderNotFound(){
-    pokeList.style.display = 'none'
     pokeCard.innerHTML = ""
     pokeCard.appendChild(notFound())
 

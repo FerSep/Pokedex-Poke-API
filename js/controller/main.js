@@ -7,7 +7,7 @@ import {getPoke} from "./pokeController.js";
 export async function getAll(gen){
    const datos = await getPoke.getAll(gen);
     if(!datos){
-        console.log('No hay datos');
+        renderNotFound()
         return;
     }
     renderList(datos)
@@ -16,16 +16,23 @@ export async function getAll(gen){
 export async function getRegion(input){
     const res = await getPoke.getRegion(input)
     if(!res) {
-        console.log('No hay datos')
+        renderNotFound()
         return
     }
     renderList(res)
+}
+export async function getType(type){
+    const datos = await getPoke.getType(type);
+    if(!datos) {
+        renderNotFound()
+        return;
+    }
+    renderList(datos)
 }
 
 export async function getDetails(input){
     const res = await getPoke.getDetails(input)
     if(!res) {
-        console.log('404')
         renderNotFound()
         return
     }
@@ -39,7 +46,6 @@ export async function getDetails(input){
     renderStats(await ProcessPoke.getstats(res))
     renderMoves(await ProcessPoke.getmoves(res))
 }
-
 
 export async function changeDiv() {
      const sectionInfo = document.querySelector('.pokeProfile') 
@@ -60,7 +66,6 @@ export async function changeDiv() {
             } else if (seleccionado.id === 'moves') {
                 sectionMoves.style.display = 'block';
             }
-            console.log("Elemento seleccionado:", seleccionado.id);
         });
     });
      
@@ -69,21 +74,12 @@ export async function changeDiv() {
 export async function searchMove(move) {
     const res = await getPoke.searchMove(move)
     if(!res) {
-        console.log('No hay datos')
         return
     }
     
 
 }
 
-export async function getType(type){
-    const datos = await getPoke.getType(type);
-    if(!datos) {
-        console.log('No hay datos');
-        return;
-    }
-    renderList(datos)
-}
 async function getHeader(res){
     
     const base = {

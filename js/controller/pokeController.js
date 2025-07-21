@@ -8,10 +8,8 @@ export class getPoke{
         if(!datos) {
             return;
         }
-        console.log(datos);
         const pokeList = document.getElementById("pokelist");
         pokeList.innerHTML = "";
-
         return datos
     }
 
@@ -29,10 +27,9 @@ export class getPoke{
     static async getType(type){
         const datos = await pokeType(type);
         if(!datos) {
-            console.log('No hay datos');
             return;
         }
-        console.log(datos);
+
         const pokeList = document.getElementById("pokelist");
         pokeList.innerHTML = "";
 
@@ -42,7 +39,6 @@ export class getPoke{
     static async getRegion(input){
         const res = await pokeRegion(input)
             if(!res) {
-                console.log('No hay datos')
                 return
             }
             const pokeList = document.getElementById('pokelist')
