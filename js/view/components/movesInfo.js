@@ -1,11 +1,10 @@
 
 export function MovesCard(){
 
-    const div = document.createElement('div')
-    div.classList.add('movesCard')
+    const container = document.createElement('div')
+    container.classList.add('movesCard')
     
-
-    div.appendChild()
+    container.appendChild()
     
-    return div
+    return container
 }

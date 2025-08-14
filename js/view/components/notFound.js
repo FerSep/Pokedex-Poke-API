@@ -4,7 +4,7 @@ export function notFound() {
     div.classList.add('notFound')
 
     const h1 = document.createElement('h1')
-    h1.textContent = '404'
+    h1.textContent = 'Not Found Pokemon'
 
     div.appendChild(h1)
 
