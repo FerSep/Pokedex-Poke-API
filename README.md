@@ -12,8 +12,11 @@ Tecnologias:
 3-JavaScript(vanilla).
 
 Caracteristicas:
+
 -Busqueda por nombre del pokemon.
+
 -Busqueda por filtros, gen, tipos, entre otros.
+
 -Mostrar informacion basica(nombre, imagen, habilidades).
 
 URL de la pagina : no disponible
